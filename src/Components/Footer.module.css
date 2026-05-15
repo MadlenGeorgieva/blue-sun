@@ -1,5 +1,5 @@
 .footer {
-  background: #f6d94c;
+  background: #FFDD4A;
   padding: 34px 52px 28px;
 
   display: flex;
@@ -29,7 +29,7 @@
   align-items: center;
   gap: 10px;
 
-  color: #079bd3;
+  color: #009AD5;
   font-family: "Bowlby One", sans-serif;
   font-size: 22px;
   text-transform: uppercase;

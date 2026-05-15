@@ -14,8 +14,8 @@
   max-width: 430px;
   border-radius: 22px;
   overflow: hidden;
-  border-right: 6px solid #079bd3;
-  border-bottom: 6px solid #079bd3;
+  border-right: 6px solid #009AD5;
+  border-bottom: 6px solid #009AD5;
 }
 
 .bandImage {
@@ -31,7 +31,7 @@
   height: 44px;
   border: none;
   border-radius: 12px;
-  background: #f7f7f7;
+  background: #f9f9f9;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@
 
 .info h2 {
   font-family: "Bowlby One", sans-serif;
-  color: #079bd3;
+  color: #009AD5;
   font-size: 52px;
   margin: 0 0 14px;
   font-weight: 900;
@@ -79,13 +79,13 @@
 
 .artist {
   font-size: 18px;
-  color: #24499b;
+  color: #244990;
   margin: 0;
 }
 
 .progress {
   height: 4px;
-  background: #24499b;
+  background: #244990;
   position: relative;
 }
 
@@ -95,14 +95,14 @@
   top: -5px;
   width: 12px;
   height: 12px;
-  background: #24499b;
+  background: #244990;
   border-radius: 50%;
 }
 
 .times {
   display: flex;
   justify-content: space-between;
-  color: #24499b;
+  color: #244990;
   font-size: 12px;
   margin-top: 8px;
 }
@@ -117,7 +117,7 @@
 .controls button {
   border: none;
   background: none;
-  color: #079bd3;
+  color: #009AD5;
   font-size: 24px;
   cursor: pointer;
 }
@@ -126,7 +126,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #079bd3 !important;
+  background: #009AD5 !important;
   color: white !important;
 }
 
@@ -141,8 +141,8 @@
   .imageCard {
     width: 100%;
     border-radius: 16px;
-    border-right: 4px solid #079bd3;
-    border-bottom: 4px solid #079bd3;
+    border-right: 4px solid #009AD5;
+    border-bottom: 4px solid #009AD5;
   }
 
   .heartButton {

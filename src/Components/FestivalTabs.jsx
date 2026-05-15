@@ -7,6 +7,8 @@ import FriendsPanel from "./FriendsPanel";
 import PanelActionButton from "./PanelActionButton";
 
 import spotifyIcon from "../assets/spotify.png";
+import scheduleIcon from "../assets/schedule-outline-white.png";
+import friendsIcon from "../assets/friends-outline-white.png";
 
 const tabs = {
   music: {
@@ -18,21 +20,21 @@ const tabs = {
     external: true,
   },
   program: {
-    label: "Program",
-    content: <ProgramPanel />,
-    buttonText: "View full program",
-    buttonIcon: null,
-    link: "/program",
-    external: false,
-  },
+  label: "Program",
+  content: <ProgramPanel />,
+  buttonText: "Full Program",
+  buttonIcon: scheduleIcon,
+  link: "/program",
+  external: false,
+},
   friends: {
-    label: "Friends",
-    content: <FriendsPanel />,
-    buttonText: "Invite friends",
-    buttonIcon: null,
-    link: "/friends",
-    external: false,
-  },
+  label: "Friends",
+  content: <FriendsPanel />,
+  buttonText: "See all",
+  buttonIcon: friendsIcon,
+  link: "/friends",
+  external: false,
+},
 };
 
 function FestivalTabs() {

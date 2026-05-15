@@ -1,0 +1,97 @@
+.friendsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 8px 0;
+}
+
+.friendItem {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 74px 1fr auto;
+
+  align-items: center;
+  column-gap: 20px;
+}
+
+.avatar {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #079bd3;
+}
+
+.info h3 {
+  margin: 0 0 8px;
+  color: #24499b;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #24499b;
+  font-size: 15px;
+}
+
+.location img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.battery {
+  width: 42px;
+  object-fit: contain;
+}
+
+.divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+
+  height: 1px;
+  background: black;
+}
+
+@media (max-width: 600px) {
+  .friendsPanel {
+    gap: 16px;
+  }
+
+  .friendItem {
+    grid-template-columns: 54px 1fr auto;
+    column-gap: 12px;
+  }
+
+  .avatar {
+    width: 54px;
+    height: 54px;
+    border-width: 3px;
+  }
+
+  .info h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .location {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .location img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .battery {
+    width: 30px;
+  }
+}

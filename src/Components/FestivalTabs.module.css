@@ -12,14 +12,14 @@
 .tab {
   background: none;
   border: none;
-  color: #079bd3;
+  color: #009AD5;
   font-size: 28px;
   font-weight: 700;
   cursor: pointer;
 }
 
 .activeTab {
-  color: #24499b;
+  color: #244990;
 }
 
 .content {

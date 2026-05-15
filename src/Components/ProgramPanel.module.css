@@ -1,0 +1,93 @@
+.programPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 36px 0 8px;
+  max-width: 900px;
+}
+
+.eventRow {
+  display: grid;
+  grid-template-columns: 120px 34px 1fr;
+  align-items: center;
+  min-height: 48px;
+}
+
+.time {
+  margin: 0;
+  color: #079bd3;
+  font-family: "Bowlby One", sans-serif;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border: 3px solid #079bd3;
+  border-radius: 50%;
+  background: #f9f9f9;
+  z-index: 2;
+}
+
+.line {
+  position: absolute;
+  top: 28px;
+  width: 3px;
+  height: 52px;
+  background: #079bd3;
+}
+
+.title {
+  margin: 0;
+  color: #24499b;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .programPanel {
+    gap: 14px;
+    padding: 18px 0 4px;
+  }
+
+  .eventRow {
+    grid-template-columns: 58px 18px 1fr;
+    min-height: 34px;
+  }
+
+  .time {
+    font-size: 16px;
+  }
+
+  .timeline {
+    height: 34px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-width: 2px;
+  }
+
+  .line {
+    top: 20px;
+    width: 2px;
+    height: 28px;
+  }
+
+  .title {
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+}

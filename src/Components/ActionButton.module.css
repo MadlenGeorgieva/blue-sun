@@ -1,6 +1,6 @@
 .actionButton {
   width: 100%;
-  background: #24499b;
+  background: #244990;
   border: none;
   border-radius: 18px;
   padding: 14px 18px;
@@ -15,7 +15,7 @@
 .iconBox {
   width: 64px;
   height: 64px;
-  background: #f7f7f7;
+  background: #f9f9f9;
   border-radius: 10px;
 
   display: flex;
@@ -32,7 +32,7 @@
 .text {
   flex: 1;
   text-align: left;
-  color: white;
+  color: #f9f9f9;
   font-size: 26px;
   line-height: 1.35;
   font-weight: 400;
