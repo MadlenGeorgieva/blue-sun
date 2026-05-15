@@ -1,0 +1,37 @@
+.section {
+  background: #f9f9f9;
+  padding: 24px 52px 36px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: #079bd3;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.activeTab {
+  color: #24499b;
+}
+
+.content {
+  margin-bottom: 22px;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 22px 28px 30px;
+  }
+
+  .tab {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,30 @@
+.ticketActions {
+  background: #f6d94c;
+  padding: 36px 52px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  clip-path: polygon(
+    0 0,
+    10% 5%,
+    28% 0,
+    52% 6%,
+    78% 0,
+    100% 5%,
+    100% 95%,
+    84% 100%,
+    65% 95%,
+    40% 100%,
+    18% 95%,
+    0 100%
+  );
+}
+
+@media (max-width: 480px) {
+  .ticketActions {
+    padding: 34px 28px;
+    gap: 22px;
+  }
+}

@@ -1,0 +1,82 @@
+.countdown {
+  position: relative;
+  z-index: 6;
+
+  background: #f7f7f7;
+  min-height: 290px;
+
+  padding: 60px 52px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: visible;
+}
+
+.text {
+  position: relative;
+  z-index: 8;
+  text-align: left;
+}
+
+.text h1 {
+  margin: 0;
+  font-family: "Bowlby One", sans-serif;
+  font-size: 140px;
+  line-height: 0.85;
+  color: #079bd3;
+  font-weight: 900;
+}
+
+.text h2 {
+  margin: 10px 0 30px;
+  font-family: "Bowlby One", sans-serif;
+  font-size: 42px;
+  color: #079bd3;
+  font-weight: 900;
+}
+
+.text p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #24499b;
+  font-weight: 600;
+}
+
+.sun {
+  position: absolute;
+  top: -42px;
+  right: 0;
+
+  width: 245px;
+
+  z-index: 20;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .countdown {
+    min-height: 230px;
+    padding: 36px 28px;
+  }
+
+  .text h1 {
+    font-size: 82px;
+  }
+
+  .text h2 {
+    font-size: 24px;
+    margin: 6px 0 18px;
+  }
+
+  .text p {
+    font-size: 15px;
+  }
+
+  .sun {
+    width: 150px;
+    top: -18px;
+    right: 0;
+  }
+}

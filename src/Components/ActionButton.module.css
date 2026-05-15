@@ -1,0 +1,46 @@
+.actionButton {
+  width: 100%;
+  background: #24499b;
+  border: none;
+  border-radius: 18px;
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  cursor: pointer;
+}
+
+.iconBox {
+  width: 64px;
+  height: 64px;
+  background: #f7f7f7;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBox img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.text {
+  flex: 1;
+  text-align: left;
+  color: white;
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transform: scaleX(-1);
+}
