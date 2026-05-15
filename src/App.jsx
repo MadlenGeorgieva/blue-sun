@@ -1,17 +1,15 @@
-import "./App.css";
-import Header from "./Components/Header";
-import Countdown from "./Components/Countdown";
-import TicketActions from "./Components/TicketActions";
-import FestivalTabs from "./Components/FestivalTabs";
+import { Routes, Route } from "react-router-dom";
+
+import Layout from "./Layout";
+import Home from "./Views/Home";
 
 function App() {
   return (
-    <main className="app">
-      <Header />
-      <Countdown />
-      <TicketActions />
-      <FestivalTabs />
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 

@@ -1,44 +1,4 @@
 .button {
-  background: #24499b;
-  color: white;
-  border-radius: 14px;
-  padding: 12px 18px;
-
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
-  text-decoration: none;
-  font-size: 26px;
-}
-
-.leftIcon {
-  width: 32px;
-  height: 32px;
-}
-
-.plus {
-  margin-left: auto;
-
-  width: 34px;
-  height: 34px;
-
-  border: 3px solid white;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.plusIcon {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.button {
   width: 100%;
   background: #24499b;
   color: white;
@@ -47,20 +7,25 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
   gap: 16px;
 
   text-decoration: none;
   font-size: 26px;
+
+  box-sizing: border-box;
 }
 
 .leftIcon {
   width: 32px;
   height: 32px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .button span {
-  flex: 1;
+  white-space: nowrap;
 }
 
 .plusIcon {
@@ -73,18 +38,22 @@
 
 @media (max-width: 600px) {
   .button {
-    font-size: 18px;
+    font-size: 15px;
     padding: 10px 14px;
     border-radius: 12px;
+    gap: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .leftIcon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   .plusIcon {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
   }
 }

@@ -1,8 +1,12 @@
 .musicPanel {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: 420px 520px;
+  justify-content: center;
   align-items: center;
+  gap: 48px;
+
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .imageCard {
@@ -42,6 +46,7 @@
 
 .info {
   text-align: left;
+  max-width: 520px;
 }
 
 .nowPlaying {
@@ -126,14 +131,15 @@
 }
 
 @media (max-width: 600px) {
-  .musicPanel {
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    align-items: center;
-  }
+ .musicPanel {
+  display: grid;
+  grid-template-columns: minmax(140px, 1.15fr) 1fr;
+  gap: 18px;
+  align-items: center;
+}
 
   .imageCard {
-    max-width: 100%;
+    width: 100%;
     border-radius: 16px;
     border-right: 4px solid #079bd3;
     border-bottom: 4px solid #079bd3;
