@@ -56,3 +56,7 @@
     height: 34px;
   }
 }
+
+.item {
+  text-decoration: none;
+}
