@@ -8,7 +8,7 @@ import heartNotActive from "../assets/heart-not-active.png";
 
 import saveUsImg from "../assets/SaveUs.jpg";
 import backBlue from "../assets/back-blue.png";
-import searchIcon from "../assets/search-icon.png";
+import searchIcon from "../assets/search.png";
 
 const artists = [
   { time: "11:45", name: "SaveUs", stage: "Wonder blue", image: saveUsImg, saved: false },
