@@ -1,0 +1,20 @@
+.notificationsPage {
+  padding: 28px 52px 40px;
+  background: #f9f9f9;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+@media (max-width: 600px) {
+  .notificationsPage {
+    padding: 24px 36px 40px;
+  }
+
+  .list {
+    gap: 14px;
+  }
+}

@@ -1,0 +1,104 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 18px;
+  background: #9fddea;
+  border-radius: 16px;
+  padding: 20px 22px;
+  min-height: 88px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  position: relative;
+  z-index: 3;
+}
+
+.main {
+  margin: 0 0 4px;
+  color: #24499b;
+  font-weight: 700;
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.greenDot {
+  width: 10px;
+  height: 10px;
+  background: #37c96b;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.small {
+  margin: 0;
+  color: #24499b;
+  font-size: 14px;
+}
+
+.visuals {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 95px;
+  height: 100%;
+}
+
+.map {
+  position: absolute;
+  right: 78px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 92px;
+  z-index: 2;
+}
+
+.sun {
+  position: absolute;
+  right: -28px;
+  top: -16px;
+  width: 92px;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .banner {
+    padding: 16px;
+    min-height: 64px;
+  }
+
+  .main {
+    font-size: 14px;
+  }
+
+  .greenDot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .small {
+    font-size: 12px;
+  }
+
+  .visuals {
+    width: 72px;
+  }
+
+  .map {
+    width: 42px;
+    right: 46px;
+  }
+
+  .sun {
+    width: 62px;
+    right: -24px;
+    top: -12px;
+  }
+}
