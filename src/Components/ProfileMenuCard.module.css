@@ -1,20 +1,23 @@
 .card {
   width: 100%;
-  background: #244990;
+  background: #24499b;
   border: none;
-  border-radius: 18px;
-  padding: 14px 18px;
+  border-radius: 16px;
+  padding: 16px 18px;
 
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 
-  box-sizing: border-box;
+  cursor: pointer;
+
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 }
 
 .iconCircle {
-  width: 64px;
-  height: 64px;
+  width: 58px;
+  height: 58px;
+
   background: #ffdd4a;
   border-radius: 50%;
 
@@ -35,12 +38,12 @@
   flex: 1;
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
+
+  text-align: left;
 }
 
-.card h2 {
+.content strong {
   font-family: "Bowlby One", sans-serif;
   flex: 1;
   text-align: left;
@@ -55,43 +58,47 @@
   text-transform: uppercase;
 }
 
-.card span {
-  color: #f9f9f9;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  line-height: 1;
-  font-weight: 200;
+.content small {
+  margin-top: 6px;
 
-  flex-shrink: 0;
+  color: #f9f9f9;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.arrow {
+  width: 24px;
 }
 
 @media (max-width: 600px) {
   .card {
-    padding: 14px 18px;
+    padding: 12px 14px;
     gap: 12px;
     border-radius: 14px;
   }
 
   .iconCircle {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
   }
 
   .iconCircle img {
-    width: 44px;
-    height: 44px;
+    width: 28px;
+    height: 28px;
   }
 
-  .content {
-    gap: 12px;
-  }
-
-  .card h2 {
+  .content strong {
     font-size: 18px;
-    line-height: 1.2;
   }
 
-  .card span {
+  .content small {
+    margin-top: 4px;
     font-size: 12px;
+  }
+
+  .arrow {
+    width: 20px;
   }
 }
