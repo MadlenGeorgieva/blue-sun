@@ -30,10 +30,11 @@
 }
 
 .text {
+  font-family: "Poppins", sans-serif;
   flex: 1;
   text-align: left;
   color: #f9f9f9;
-  font-size: 20px;
+  font-size: 28px;
   line-height: 1.35;
   font-weight: 400;
 }
@@ -42,4 +43,10 @@
   width: 35px;
   height: 35px;
   object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .text{
+     font-size: 20px;
+  }
 }

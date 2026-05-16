@@ -28,7 +28,7 @@
   margin: 0 0 10px;
   color: #24499b;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -88,30 +88,30 @@
   }
 
   .friendItem {
-    grid-template-columns: 58px 1fr auto;
-    column-gap: 12px;
-    padding-bottom: 10px;
+    grid-template-columns: 62px 1fr auto;
+    column-gap: 20px;
+    padding: 10px 0px;
   }
 
   .avatar {
-    width: 58px;
-    height: 58px;
+    width: 62px;
+    height: 62px;
     border-width: 3px;
   }
 
   .info h3 {
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 4px;
   }
 
   .location {
-    font-size: 12px;
+    font-size: 16px;
     gap: 4px;
   }
 
   .location img {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
   }
 
   .batteryWrapper {
@@ -121,10 +121,6 @@
 
   .battery {
     width: 32px;
-  }
-
-  .percent {
-    font-size: 8px;
   }
 
   .divider {

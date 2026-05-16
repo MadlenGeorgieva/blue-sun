@@ -10,11 +10,12 @@
 }
 
 .tab {
+  font-family: "Poppins", sans-serif;
   background: none;
   border: none;
   color: #009AD5;
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -38,10 +39,10 @@
   }
 
   .tab {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .content {
-    min-height: 190px;
+    min-height: 225px;
   }
 }

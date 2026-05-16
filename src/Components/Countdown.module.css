@@ -22,7 +22,7 @@
 .text h1 {
   margin: 0;
   font-family: "Bowlby One", sans-serif;
-  font-size: 140px;
+  font-size: 160px;
   line-height: 0.85;
   color: #009AD5;
   font-weight: 900;
@@ -38,15 +38,15 @@
 
 .text p {
   margin: 0;
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1.2;
   color: #244990;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .sun {
   position: absolute;
-  top: -42px;
+  top: -32px;
   right: 0;
 
   width: 245px;
@@ -62,21 +62,21 @@
   }
 
   .text h1 {
-    font-size: 82px;
+    font-size: 112px;
   }
 
   .text h2 {
-    font-size: 24px;
+    font-size: 26px;
     margin: 6px 0 18px;
   }
 
   .text p {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .sun {
     width: 150px;
-    top: -18px;
+    top: -14px;
     right: 0;
   }
 }

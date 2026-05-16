@@ -159,29 +159,29 @@
   }
 
   .nowPlaying {
-    font-size: 11px;
-    margin: 0 0 5px;
+    font-size: 16px;
+    margin: 0 0 15px;
   }
 
   .info h2 {
-    font-size: 22px;
+    font-size: 32px;
     margin: 0 0 10px;
     line-height: 1;
   }
 
   .artistRow {
     gap: 5px;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
   }
 
   .artistRow img {
-    width: 11px;
-    height: 11px;
+    width: 16px;
+    height: 16px;
     object-fit: contain;
   }
 
   .artist {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.2;
   }
 
@@ -196,7 +196,7 @@
   }
 
   .times {
-    font-size: 8px;
+    font-size: 12px;
     margin-top: 5px;
   }
 
@@ -205,7 +205,7 @@
   }
 
   .controls button {
-    font-size: 13px;
+    font-size: 20px;
   }
 
   .play {
