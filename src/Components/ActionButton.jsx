@@ -1,5 +1,5 @@
 import styles from "./ActionButton.module.css";
-import arrow from "../assets/back white.png";
+import arrow from "../assets/arrow.png";
 
 function ActionButton({ icon, text }) {
   return (

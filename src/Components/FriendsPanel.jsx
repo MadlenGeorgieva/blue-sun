@@ -13,12 +13,14 @@ const friends = [
     location: "Bla Scene",
     image: nannaImg,
     battery: batteryImg,
+    percent: "67%",
   },
   {
     name: "Freja Lauritsen",
     location: "Main Entrance",
     image: frejaImg,
     battery: batteryImg,
+    percent: "67%",
   },
 ];
 
@@ -42,11 +44,13 @@ function FriendsPanel() {
             </div>
           </div>
 
-          <img
-            className={styles.battery}
-            src={friend.battery}
-            alt="Battery"
-          />
+          <div className={styles.batteryWrapper}>
+            <img
+              className={styles.battery}
+              src={friend.battery}
+              alt="Battery"
+            />
+          </div>
 
           {index !== friends.length - 1 && (
             <div className={styles.divider}></div>

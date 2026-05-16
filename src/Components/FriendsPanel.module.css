@@ -1,42 +1,45 @@
 .friendsPanel {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 8px 0;
+  gap: 26px;
+  padding-top: 14px;
 }
 
 .friendItem {
   position: relative;
 
   display: grid;
-  grid-template-columns: 74px 1fr auto;
-
+  grid-template-columns: 96px 1fr auto;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 22px;
+
+  padding-bottom: 18px;
 }
 
 .avatar {
-  width: 74px;
-  height: 74px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #079bd3;
 }
 
 .info h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: #24499b;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .location {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
 
   color: #24499b;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .location img {
@@ -45,44 +48,64 @@
   object-fit: contain;
 }
 
+.batteryWrapper {
+  position: relative;
+  width: 52px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .battery {
-  width: 42px;
+  width: 52px;
   object-fit: contain;
+}
+
+.percent {
+  position: absolute;
+  color: #079bd3;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .divider {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -10px;
+  bottom: 0;
 
   height: 1px;
-  background: black;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 600px) {
   .friendsPanel {
-    gap: 16px;
+    gap: 14px;
+    padding-top: 6px;
   }
 
   .friendItem {
-    grid-template-columns: 54px 1fr auto;
+    grid-template-columns: 58px 1fr auto;
     column-gap: 12px;
+    padding-bottom: 10px;
   }
 
   .avatar {
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
     border-width: 3px;
   }
 
   .info h3 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 4px;
   }
 
   .location {
-    font-size: 11px;
+    font-size: 12px;
     gap: 4px;
   }
 
@@ -91,7 +114,21 @@
     height: 12px;
   }
 
+  .batteryWrapper {
+    width: 32px;
+    height: 16px;
+  }
+
   .battery {
-    width: 30px;
+    width: 32px;
+  }
+
+  .percent {
+    font-size: 8px;
+  }
+
+  .divider {
+    height: 0.5px;
+    background: rgba(0, 0, 0, 0.2);
   }
 }
