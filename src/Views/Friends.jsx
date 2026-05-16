@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import styles from "./Friends.module.css";
 
 import PageTitle from "../Components/PageTitle";
@@ -6,12 +8,12 @@ import FriendsLocationBanner from "../Components/FriendsLocationBanner";
 import FriendCard from "../Components/FriendCard";
 import ActionButton from "../Components/ActionButton";
 
+import subtitleIcon from "../assets/sun-dark.png";
+import qrCode from "../assets/qr-code.png";
+import infoIcon from "../assets/info.png";
+
 import nannaImg from "../assets/Nanna.jpg";
 import frejaImg from "../assets/Freja.jpg";
-
-import qrIcon from "../assets/qr-code.png";
-import sunDark from "../assets/sun-dark.png";
-import infoIcon from "../assets/info.png";
 
 const friends = [
   {
@@ -29,30 +31,43 @@ const friends = [
 ];
 
 function Friends() {
+  const [search, setSearch] = useState("");
+
+  const filteredFriends = friends.filter(
+    (friend) =>
+      friend.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <section className={styles.page}>
       <PageTitle title="Friends" />
 
       <p className={styles.subtitle}>
-        <img src={sunDark} alt="" />
+        <img src={subtitleIcon} alt="" />
         Your festival crew
       </p>
 
-      <FriendsSearch />
+      <FriendsSearch value={search} onChange={setSearch} />
 
       <FriendsLocationBanner />
 
       <h2 className={styles.sectionTitle}>Your Friends</h2>
 
       <div className={styles.list}>
-        {friends.map((friend) => (
-          <FriendCard key={friend.name} {...friend} />
+        {filteredFriends.map((friend) => (
+          <FriendCard
+            key={friend.name}
+            name={friend.name}
+            location={friend.location}
+            image={friend.image}
+            battery={friend.battery}
+          />
         ))}
       </div>
 
       <div className={styles.ticketButton}>
         <ActionButton
-          icon={qrIcon}
+          icon={qrCode}
           text="Scan Friend’s Ticket to add them"
         />
       </div>
