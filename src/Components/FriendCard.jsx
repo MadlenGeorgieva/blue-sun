@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import styles from "./FriendCard.module.css";
 
 import locationIcon from "../assets/location-outline-dark.png";
@@ -5,8 +7,13 @@ import batteryImg from "../assets/battery.png";
 import arrowDark from "../assets/arrow-dark.png";
 
 function FriendCard({ name, location, image, battery }) {
+  const navigate = useNavigate();
+
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      onClick={() => navigate("/map")}
+    >
       <div className={styles.avatarWrap}>
         <img className={styles.avatar} src={image} alt={name} />
         <span className={styles.online}></span>

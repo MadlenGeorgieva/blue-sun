@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "./PanelActionButton.module.css";
 import plusIcon from "../assets/plusIcon.png";
 
@@ -24,9 +26,9 @@ function PanelActionButton({ text, icon, link, external }) {
   }
 
   return (
-    <a className={styles.button} href={link}>
+    <Link className={styles.button} to={link}>
       {content}
-    </a>
+    </Link>
   );
 }
 

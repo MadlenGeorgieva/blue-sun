@@ -24,7 +24,7 @@ const tabs = {
   content: <ProgramPanel />,
   buttonText: "Full Program",
   buttonIcon: scheduleIcon,
-  link: "/program",
+  link: "/schedule",
   external: false,
 },
   friends: {
