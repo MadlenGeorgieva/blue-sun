@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
 import homeIcon from "../assets/HomeSun.png";
@@ -9,32 +10,32 @@ import friendsIcon from "../assets/friends-light.png";
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <button className={styles.item}>
+      <Link to="/" className={styles.item}>
         <img src={homeIcon} alt="" />
         <span>Home</span>
-      </button>
+      </Link>
 
-      <button className={styles.item}>
+      <Link to="/lineup" className={styles.item}>
         <img src={lineupIcon} alt="" />
         <span>Lineup</span>
-      </button>
+      </Link>
 
-      <button className={styles.item}>
+      <Link to="/schedule" className={styles.item}>
         <img src={scheduleIcon} alt="" />
         <span>Schedule</span>
-      </button>
+      </Link>
 
-      <button className={styles.item}>
+      <Link to="/map" className={styles.item}>
         <img src={mapIcon} alt="" />
         <span>Map</span>
-      </button>
+      </Link>
 
-      <button className={styles.item}>
+      <Link to="/friends" className={styles.item}>
         <img src={friendsIcon} alt="" />
         <span>Friends</span>
-      </button>
+      </Link>
     </footer>
   );
 }
 
-export default Footer;  
+export default Footer;
