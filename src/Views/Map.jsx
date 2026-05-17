@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Map.module.css";
 import nannaImg from "../assets/Nanna.jpg";
 import frejaImg from "../assets/Freja.jpg";
-import backBlue from "../assets/back-blue.png";
 import mapImg from "../assets/live-map.png";
+import PageTitle from "../Components/PageTitle";
 
 const CATEGORIES = ["None", "All", "Stages", "Food", "Chargers", "Rest Zones", "Toilets"];
 
@@ -208,12 +208,7 @@ function Map() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <div className={styles.titleRow}>
-          <button className={styles.backButton} onClick={() => navigate(-1)}>
-            <img src={backBlue} alt="Back" className={styles.backImg} />
-          </button>
-          <h1 className={styles.title}>MAP</h1>
-        </div>
+        <PageTitle title="MAP" />
 
         <nav className={styles.tabs}>
           {CATEGORIES.map((cat) => (
