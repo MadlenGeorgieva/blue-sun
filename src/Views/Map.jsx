@@ -4,33 +4,33 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Map.module.css";
 import nannaImg from "../assets/Nanna.jpg";
 import frejaImg from "../assets/Freja.jpg";
-import mapImg from "../assets/live-map.png";
+import LiveMapImg from "../assets/LiveMap.png";
 import PageTitle from "../Components/PageTitle";
 
 const CATEGORIES = ["None", "All", "Stages", "Food", "Chargers", "Rest Zones", "Toilets"];
 
 const PINS = {
   Stages: [
-    { id: "stage1", label: "Main Stage", x: 76, y: 48 },
-    { id: "stage2", label: "Wonder Blue", x: 37, y: 59 },
-    { id: "stage3", label: "The Dragoon", x: 52, y: 79 },
+    { id: "stage1", label: "Main Stage", x: 62, y: 40 },
+    { id: "stage2", label: "Wonder Blue", x: 25, y: 54 },
+    { id: "stage3", label: "The Dragoon", x: 38, y: 78 },
   ],
   Food: [
     { id: "food1", label: "Food Court", x: 62, y: 60 },
-    { id: "food2", label: "Market", x: 48, y: 55 },
-    { id: "food3", label: "Bar", x: 66, y: 75 },
+    { id: "food2", label: "Market", x: 35, y: 52 },
+    { id: "food3", label: "Bar", x: 52, y: 73 },
   ],
   Chargers: [
-    { id: "charger1", label: "Charger A", x: 76, y: 28 },
-    { id: "charger2", label: "Charger B", x: 33, y: 70 },
+    { id: "charger1", label: "Charger A", x: 72, y: 25 },
+    { id: "charger2", label: "Charger B", x: 20, y: 70 },
   ],
   "Rest Zones": [
-    { id: "rest1", label: "Chill Zone", x: 78, y: 70 },
-    { id: "rest2", label: "Shade Area", x: 48, y: 67 },
+    { id: "rest1", label: "Chill Zone", x: 64, y: 66 },
+    { id: "rest2", label: "Shade Area", x: 31, y: 66 },
   ],
   Toilets: [
-    { id: "toilet1", label: "Toilet A", x: 90, y: 52 },
-    { id: "toilet2", label: "Toilet B", x: 90, y: 67 },
+    { id: "toilet1", label: "Toilet A", x: 76, y: 45 },
+    { id: "toilet2", label: "Toilet B", x: 76, y: 68 },
   ],
 };
 
@@ -40,8 +40,9 @@ const friends = [
 ];
 
 function Map() {
+  const [sosOpen, setSosOpen] = useState(false);
   const navigate = useNavigate();
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("None");
   const [focusedFriend, setFocusedFriend] = useState(null);
   const [friendPositions, setFriendPositions] = useState(
     friends.map((f) => ({ x: f.startX, y: f.startY }))
@@ -67,6 +68,17 @@ function Map() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    const min = getMinScale();
+    if (scale.current < min) {
+      scale.current = min;
+      applyTransform();
+    }
+  }, 100);
+  return () => clearTimeout(timer);
+}, []);
+
   const getMinScale = () => {
     const container = mapContainerRef.current;
     const inner = mapInnerRef.current;
@@ -83,10 +95,20 @@ function Map() {
   };
 
   const handleMapLoad = () => {
-    const min = getMinScale();
-    scale.current = min;
-    applyTransform();
-  };
+  const min = getMinScale();
+  scale.current = min;
+  const container = mapContainerRef.current;
+  const inner = mapInnerRef.current;
+  if (container && inner) {
+    const scaledW = inner.clientWidth * min;
+    const scaledH = inner.clientHeight * min;
+    translate.current = {
+      x: (container.clientWidth - scaledW) / 2,
+      y: (container.clientHeight - scaledH) / 2,
+    };
+  }
+  applyTransform();
+};
 
   const clampTranslate = () => {
     const container = mapContainerRef.current;
@@ -235,7 +257,7 @@ function Map() {
         >
           <div className={styles.mapInner} ref={mapInnerRef}>
             <img
-              src={mapImg}
+              src={LiveMapImg}
               alt="Festival Map"
               className={styles.mapImg}
               draggable={false}
@@ -273,7 +295,9 @@ function Map() {
             <button onClick={zoomOut}>−</button>
           </div>
 
-          <button className={styles.sosButton}>SOS</button>
+          <button className={styles.sosButton} onClick={() => setSosOpen(true)}>
+            SOS
+          </button>
         </div>
 
         <div className={styles.friendsBar}>
@@ -293,6 +317,25 @@ function Map() {
             ))}
           </div>
         </div>
+        {sosOpen && (
+  <div className={styles.sosOverlay} onClick={() => setSosOpen(false)}>
+    <div className={styles.sosModal} onClick={(e) => e.stopPropagation()}>
+      <h2 className={styles.sosTitle}>Need Help?</h2>
+      <p className={styles.sosText}>Your live location will be shared with festival staff.</p>
+      <div className={styles.sosOptions}>
+        <button className={styles.sosOption}>
+          <h3>Medical</h3>
+          <p>Injury, illness, overdose.</p>
+        </button>
+        <button className={styles.sosOption}>
+          <h3>General</h3>
+          <p>Lost, harassment, other.</p>
+        </button>
+      </div>
+      <button className={styles.sosClose} onClick={() => setSosOpen(false)}>Cancel</button>
+    </div>
+  </div>
+)}
       </main>
     </div>
   );
