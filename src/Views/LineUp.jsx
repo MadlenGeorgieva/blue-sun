@@ -1,37 +1,16 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import styles from "./Lineup.module.css";
 
+import PageTitle from "../Components/PageTitle";
 import locationIcon from "../assets/location-outline-dark.png";
 import heartActive from "../assets/heart-active.png";
 import heartNotActive from "../assets/heart-not-active.png";
-
-import saveUsImg from "../assets/SaveUs.jpg";
-import backBlue from "../assets/back-blue.png";
 import searchIcon from "../assets/search.png";
 
-const artists = [
-  { time: "11:45", name: "SaveUs", stage: "Wonder blue", image: saveUsImg, saved: false },
-  { time: "12:45", name: "Gallop Derby", stage: "The Dragoon", image: null, saved: true },
-  { time: "12:50", name: "Natural Born Hippies", stage: "The city festival", image: null, saved: false },
-  { time: "13:45", name: "Gnaw", stage: "Wonder blue", image: null, saved: false },
-  { time: "14:00", name: "Marie Frank", stage: "The birch grove", image: null, saved: false },
-  { time: "15:10", name: "Senior Citizens", stage: "The city festival", image: null, saved: false },
-  { time: "15:15", name: "Anastasia", stage: "The birch grove", image: null, saved: true },
-  { time: "15:20", name: "Caroline Mousing", stage: "The Dragoon", image: null, saved: false },
-  { time: "16:20", name: "Smug", stage: "The birch grove", image: null, saved: false },
-];
-
-function Lineup() {
+function Lineup({ artists, savedArtists, toggleSave }) {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const [savedState, setSavedState] = useState(
-    Object.fromEntries(artists.map((a) => [a.name, a.saved]))
-  );
-
-  const toggleSave = (name) => {
-    setSavedState((prev) => ({ ...prev, [name]: !prev[name] }));
-  };
 
   const filtered = artists.filter(
     (a) =>
@@ -40,14 +19,9 @@ function Lineup() {
   );
 
   return (
-      
+    <div className={styles.page}>
       <main className={styles.main}>
-        <div className={styles.titleRow}>
-          <button className={styles.backButton} onClick={() => navigate(-1)}>
-            <img src={backBlue} alt="Back" className={styles.backImg} />
-          </button>
-          <h1 className={styles.title}>Line Up</h1>
-        </div>
+        <PageTitle title="Line Up" />
 
         <div className={styles.searchWrapper}>
           <img src={searchIcon} alt="" className={styles.searchIcon} />
@@ -91,10 +65,10 @@ function Lineup() {
               <button
                 className={styles.heartButton}
                 onClick={() => toggleSave(artist.name)}
-                aria-label={savedState[artist.name] ? "Remove from schedule" : "Save to schedule"}
+                aria-label={savedArtists[artist.name] ? "Remove from schedule" : "Save to schedule"}
               >
                 <img
-                  src={savedState[artist.name] ? heartActive : heartNotActive}
+                  src={savedArtists[artist.name] ? heartActive : heartNotActive}
                   alt=""
                 />
               </button>
@@ -102,7 +76,7 @@ function Lineup() {
           ))}
         </div>
       </main>
-
+    </div>
   );
 }
 
