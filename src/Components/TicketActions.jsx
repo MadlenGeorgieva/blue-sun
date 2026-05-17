@@ -12,10 +12,12 @@ function TicketActions() {
 
   return (
     <section className={styles.ticketActions}>
-      <ActionButton
-        icon={qrCode}
-        text="Scan Friend’s Ticket"
-      />
+      <div onClick={() => navigate("/scanner")}>
+        <ActionButton
+          icon={qrCode}
+          text="Scan Friend’s Ticket"
+        />
+      </div>
 
       <div onClick={() => navigate("/friends")}>
         <ActionButton

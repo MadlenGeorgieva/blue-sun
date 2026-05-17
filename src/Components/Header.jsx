@@ -1,35 +1,34 @@
 import { useNavigate } from "react-router-dom";
-
 import styles from "./Header.module.css";
 
-import notification from "../assets/notification.png";
 import logo from "../assets/Logo.png";
-import profile from "../assets/profile.png";
+import notificationIcon from "../assets/notification.png";
+import profileIcon from "../assets/profile.png";
 
-function Header() {
+function Header({
+  leftIcon = notificationIcon,
+  rightIcon = profileIcon,
+  onLeftClick,
+  onRightClick,
+}) {
   const navigate = useNavigate();
 
   return (
     <header className={styles.header}>
       <button
         className={styles.iconButton}
-        onClick={() => navigate("/notifications")}
+        onClick={onLeftClick}
       >
-        <img src={notification} alt="Notifications" />
+        <img src={leftIcon} alt="" />
       </button>
 
-      <img
-        className={styles.logo}
-        src={logo}
-        alt="Blå Sol"
-        onClick={() => navigate("/")}
-      />
+      <img className={styles.logo} src={logo} alt="Blå Sol" />
 
       <button
         className={styles.iconButton}
-        onClick={() => navigate("/profile")}
+        onClick={onRightClick}
       >
-        <img src={profile} alt="Profile" />
+        <img src={rightIcon} alt="" />
       </button>
     </header>
   );

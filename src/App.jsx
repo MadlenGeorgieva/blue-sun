@@ -10,6 +10,7 @@ import Map from "./Views/Map";
 import Friends from "./Views/Friends";
 import Notifications from "./Views/Notifications";
 import Profile from "./Views/Profile";
+import Scanner from "./Views/Scanner";
 
 import SaveUsImg from "./assets/SaveUs.jpg";
 import GallopDerbyImg from "./assets/GallopDerby.png";
@@ -45,6 +46,8 @@ function App() {
 
   return (
     <Routes>
+        <Route path="scanner" element={<Scanner />} />
+        
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="lineup" element={<Lineup artists={ALL_ARTISTS} savedArtists={savedArtists} toggleSave={toggleSave} />} />

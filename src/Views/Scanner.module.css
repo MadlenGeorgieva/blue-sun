@@ -1,0 +1,174 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  padding: 34px 28px 130px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.camera {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.text {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+  color: #f9f9f9;
+}
+
+.text h1 {
+  margin: 0;
+  font-family: "Bowlby One", sans-serif;
+  font-size: 26px;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.text p {
+  margin: 8px 0 28px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.scanFrame {
+  position: relative;
+  z-index: 2;
+
+  width: 250px;
+  height: 340px;
+  margin-top: 6px;
+}
+
+.scanFrame span {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-color: #ffdd4a;
+}
+
+.cornerTopLeft {
+  top: 0;
+  left: 0;
+  border-top: 3px solid;
+  border-left: 3px solid;
+  border-radius: 18px 0 0 0;
+}
+
+.cornerTopRight {
+  top: 0;
+  right: 0;
+  border-top: 3px solid;
+  border-right: 3px solid;
+  border-radius: 0 18px 0 0;
+}
+
+.cornerBottomLeft {
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-radius: 0 0 0 18px;
+}
+
+.cornerBottomRight {
+  bottom: 0;
+  right: 0;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+  border-radius: 0 0 18px 0;
+}
+
+.uploadButton {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 340px;
+
+  margin-top: 22px;
+
+  background: #24499b;
+  color: #f9f9f9;
+
+  border: none;
+  border-radius: 14px;
+
+  padding: 12px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.uploadButton img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.fileInput {
+  display: none;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 1126px;
+  height: 100px;
+
+  background: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+}
+
+.scanButton {
+  width: 64px;
+  height: 64px;
+
+  border: 7px solid #009ad5;
+  border-radius: 50%;
+  background: #000;
+
+  cursor: pointer;
+}
