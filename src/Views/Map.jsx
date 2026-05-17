@@ -5,7 +5,7 @@ import styles from "./Map.module.css";
 import nannaImg from "../assets/Nanna.jpg";
 import frejaImg from "../assets/Freja.jpg";
 import backBlue from "../assets/back-blue.png";
-import mapImg from "../assets/map.png";
+import mapImg from "../assets/live-map.png";
 
 const CATEGORIES = ["None", "All", "Stages", "Food", "Chargers", "Rest Zones", "Toilets"];
 
