@@ -55,6 +55,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: visible;
 }
 
 .empty {
@@ -66,10 +67,10 @@
 
 .row {
   display: grid;
-  grid-template-columns: 52px 22px 56px 1fr 32px;
+  grid-template-columns: 64px 50px 58px 1fr 28px;
   align-items: center;
-  column-gap: 10px;
-  min-height: 68px;
+  column-gap: 8px;
+  min-height: 90px;
   padding: 8px 0;
   overflow: visible;
 }
@@ -85,35 +86,36 @@
 
 .timeline {
   position: relative;
+  width: 50px;
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 8px;
-  height: 68px;
+  align-items: center;
   overflow: visible;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
-  border: 3px solid #009AD5;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #009AD5;
   border-radius: 50%;
   background: #f9f9f9;
   z-index: 2;
-  flex-shrink: 0;
 }
 
 .line {
   position: absolute;
-  top: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 2px;
+  height: 90px;
   background: #009AD5;
-  height: 150px;
 }
 
 .imgBox {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: 10px;
   overflow: hidden;
   flex-shrink: 0;
@@ -136,6 +138,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
 }
 
 .name {
@@ -175,8 +178,8 @@
 }
 
 .heartButton img {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }
 
@@ -213,4 +216,49 @@
   color: #f9f9f9;
   font-size: 24px;
   font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 18px 14px 24px;
+  }
+
+  .row {
+    grid-template-columns: 58px 48px 52px 1fr 24px;
+    column-gap: 8px;
+    min-height: 82px;
+    padding: 6px 0;
+  }
+
+  .time {
+    font-size: 16px;
+  }
+
+  .timeline {
+    width: 48px;
+    height: 82px;
+  }
+
+  .line {
+    height: 88px;
+  }
+
+  .imgBox {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .stage {
+    font-size: 11px;
+  }
+
+  .heartButton img {
+    width: 22px;
+    height: 22px;
+  }
 }

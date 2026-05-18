@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import styles from "./Lineup.module.css";
+import styles from "./LineUp.module.css";
 
 import PageTitle from "../Components/PageTitle";
 import locationIcon from "../assets/location-outline-dark.png";
