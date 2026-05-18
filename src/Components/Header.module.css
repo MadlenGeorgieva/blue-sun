@@ -39,6 +39,13 @@
   object-fit: contain;
 }
 
+.logoButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .logo {
   width: 110px;
   object-fit: contain;

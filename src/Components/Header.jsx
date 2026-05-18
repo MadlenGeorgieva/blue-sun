@@ -29,13 +29,19 @@ function Header({
     }
   };
 
+  const handleLogoClick = () => {
+    navigate("/home");
+  };
+
   return (
     <header className={styles.header}>
       <button className={styles.iconButton} onClick={handleLeftClick}>
         <img src={leftIcon} alt="" />
       </button>
 
-      <img className={styles.logo} src={logo} alt="Blå Sol" />
+      <button className={styles.logoButton} onClick={handleLogoClick}>
+        <img className={styles.logo} src={logo} alt="Blå Sol" />
+      </button>
 
       <button className={styles.iconButton} onClick={handleRightClick}>
         <img src={rightIcon} alt="" />

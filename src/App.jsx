@@ -49,24 +49,23 @@ function App() {
   };
 
   return (
-  <Routes>
-    <Route path="/" element={<Start />} />
-    <Route path="loading" element={<Loading />} />
-    <Route path="login" element={<Login />} />
-    <Route path="signup" element={<Signup />} />
-    <Route path="scanner" element={<Scanner />} />
-
-    <Route path="home" element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path="lineup" element={<Lineup artists={ALL_ARTISTS} savedArtists={savedArtists} toggleSave={toggleSave} />} />
-      <Route path="schedule" element={<Schedule artists={ALL_ARTISTS} savedArtists={savedArtists} toggleSave={toggleSave} />} />
-      <Route path="map" element={<Map />} />
-      <Route path="friends" element={<Friends />} />
-      <Route path="notifications" element={<Notifications />} />
-      <Route path="profile" element={<Profile />} />
-    </Route>
-  </Routes>
-);
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Start />} />
+        <Route path="loading" element={<Loading />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="home" element={<Home />} />
+        <Route path="lineup" element={<Lineup artists={ALL_ARTISTS} savedArtists={savedArtists} toggleSave={toggleSave} />} />
+        <Route path="schedule" element={<Schedule artists={ALL_ARTISTS} savedArtists={savedArtists} toggleSave={toggleSave} />} />
+        <Route path="map" element={<Map />} />
+        <Route path="friends" element={<Friends />} />
+        <Route path="notifications" element={<Notifications />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+      <Route path="scanner" element={<Scanner />} />
+    </Routes>
+  );
 }
 
 export default App;

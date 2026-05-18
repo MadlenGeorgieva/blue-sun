@@ -1,8 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-
 import styles from "./Auth.module.css";
 
 import loginSun from "../assets/Log-In.png";
@@ -12,7 +9,6 @@ function Login() {
 
   return (
     <div className={styles.wrapper}>
-      <Header />
 
       <section className={styles.page}>
         <img
@@ -66,8 +62,6 @@ function Login() {
           </p>
         </form>
       </section>
-
-      <Footer />
     </div>
   );
 }

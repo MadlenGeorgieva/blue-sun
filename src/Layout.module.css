@@ -38,6 +38,13 @@
   box-sizing: border-box;
 }
 
+.authContent {
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
 @media (max-width: 480px) {
   .content {
     padding-top: 72px;

@@ -12,7 +12,6 @@ function Signup() {
 
   return (
     <div className={styles.wrapper}>
-      <Header />
 
       <section className={styles.page}>
         <img
@@ -74,7 +73,6 @@ function Signup() {
         </form>
       </section>
 
-      <Footer />
     </div>
   );
 }

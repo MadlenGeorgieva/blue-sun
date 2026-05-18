@@ -8,7 +8,7 @@ function PageTitle({ title }) {
 
   return (
     <div className={styles.titleRow}>
-      <button className={styles.backButton} onClick={() => navigate(-1)}>
+      <button className={styles.backButton} onClick={() => navigate("/home") }>
         <img src={backBlue} alt="Back" />
       </button>
 

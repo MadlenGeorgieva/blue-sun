@@ -10,7 +10,7 @@ import friendsIcon from "../assets/friends-light.png";
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <Link to="/" className={styles.item}>
+      <Link to="/home" className={styles.item}>
         <img src={homeIcon} alt="" />
         <span>Home</span>
       </Link>
