@@ -10,6 +10,9 @@
   gap: 20px;
 
   cursor: pointer;
+
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .iconBox {

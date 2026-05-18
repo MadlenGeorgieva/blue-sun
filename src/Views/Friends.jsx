@@ -69,6 +69,7 @@ function Friends() {
         <ActionButton
           icon={qrCode}
           text="Scan Friend’s Ticket to add them"
+          link="/scanner"
         />
       </div>
 
