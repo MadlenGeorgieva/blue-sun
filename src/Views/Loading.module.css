@@ -1,0 +1,29 @@
+.page {
+  min-height: 100vh;
+  background: #ffdd4a;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunImage {
+  width: 230px;
+  height: auto;
+  object-fit: contain;
+  animation: spin 2.2s linear infinite;
+}
+
+.page p {
+  margin-top: 70px;
+  color: #24499b;
+  font-family: "Bowlby One", sans-serif;
+  font-size: 22px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
