@@ -1,0 +1,21 @@
+.text {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+  color: #f9f9f9;
+}
+
+.text h1 {
+  margin: 0;
+  font-family: "Bowlby One", sans-serif;
+  font-size: 26px;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.text p {
+  margin: 8px 0 28px;
+  font-size: 13px;
+  font-weight: 500;
+}

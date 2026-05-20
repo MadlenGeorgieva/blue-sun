@@ -3,11 +3,17 @@ import { useNavigate } from "react-router-dom";
 
 import Header from "../Components/Header";
 
+import ScannerMedia from "../Components/Scanner/ScannerMedia";
+import ScannerOverlay from "../Components/Scanner/ScannerOverlay";
+import ScannerText from "../Components/Scanner/ScannerText";
+import ScannerFrame from "../Components/Scanner/ScannerFrame";
+import ScannerUpload from "../Components/Scanner/ScannerUpload";
+import ScannerFooter from "../Components/Scanner/ScannerFooter";
+
 import styles from "./Scanner.module.css";
 
 import closeIcon from "../assets/close.png";
 import flashIcon from "../assets/flash.png";
-import uploadIcon from "../assets/upload.png";
 
 function Scanner() {
   const navigate = useNavigate();
@@ -74,57 +80,22 @@ function Scanner() {
       />
 
       <main className={styles.content}>
-        {previewImage ? (
-          <img className={styles.camera} src={previewImage} alt="" />
-        ) : (
-          <video
-            ref={videoRef}
-            autoPlay
-            playsInline
-            muted
-            className={styles.camera}
-          />
-        )}
+        <ScannerMedia videoRef={videoRef} previewImage={previewImage} />
 
-        <div className={styles.overlayTop}></div>
-        <div className={styles.overlayLeft}></div>
-        <div className={styles.overlayRight}></div>
-        <div className={styles.overlayBottom}></div>
+        <ScannerOverlay />
 
-        <div className={styles.text}>
-          <h1>
-            Scan your
-            <br />
-            Friend’s Ticket QR
-          </h1>
+        <ScannerText />
 
-          <p>Center the QR code in the frame</p>
-        </div>
+        <ScannerFrame />
 
-        <div className={styles.scanFrame}>
-          <span className={styles.cornerTopLeft}></span>
-          <span className={styles.cornerTopRight}></span>
-          <span className={styles.cornerBottomLeft}></span>
-          <span className={styles.cornerBottomRight}></span>
-        </div>
-
-        <button className={styles.uploadButton} onClick={handleUploadClick}>
-          <img src={uploadIcon} alt="" />
-          <span>Upload picture from your Gallery</span>
-        </button>
-
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          className={styles.fileInput}
-          onChange={handleFileChange}
+        <ScannerUpload
+          fileInputRef={fileInputRef}
+          onUploadClick={handleUploadClick}
+          onFileChange={handleFileChange}
         />
       </main>
 
-      <footer className={styles.footer}>
-        <button className={styles.scanButton}></button>
-      </footer>
+      <ScannerFooter />
     </section>
   );
 }

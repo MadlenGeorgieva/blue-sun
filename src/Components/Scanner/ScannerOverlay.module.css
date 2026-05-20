@@ -1,0 +1,36 @@
+.overlayTop,
+.overlayLeft,
+.overlayRight,
+.overlayBottom {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.overlayTop {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 185px;
+}
+
+.overlayLeft {
+  top: 185px;
+  left: 0;
+  width: calc((100% - 250px) / 2);
+  height: 340px;
+}
+
+.overlayRight {
+  top: 185px;
+  right: 0;
+  width: calc((100% - 250px) / 2);
+  height: 340px;
+}
+
+.overlayBottom {
+  top: 525px;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+}

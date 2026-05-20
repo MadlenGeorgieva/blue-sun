@@ -1,0 +1,50 @@
+.scanFrame {
+  position: absolute;
+  z-index: 2;
+
+  top: 185px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 250px;
+  height: 340px;
+}
+
+.scanFrame span {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-color: #ffdd4a;
+}
+
+.cornerTopLeft {
+  top: 0;
+  left: 0;
+  border-top: 3px solid;
+  border-left: 3px solid;
+  border-radius: 18px 0 0 0;
+}
+
+.cornerTopRight {
+  top: 0;
+  right: 0;
+  border-top: 3px solid;
+  border-right: 3px solid;
+  border-radius: 0 18px 0 0;
+}
+
+.cornerBottomLeft {
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-radius: 0 0 0 18px;
+}
+
+.cornerBottomRight {
+  bottom: 0;
+  right: 0;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+  border-radius: 0 0 18px 0;
+}
