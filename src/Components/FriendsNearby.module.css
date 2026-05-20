@@ -1,0 +1,48 @@
+.friendsBar {
+  background: none;
+  margin: 12px 0 0;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.friendsCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.friendsNum {
+  font-family: "Bowlby One", sans-serif;
+  font-size: 36px;
+  color: #FFDD4A;
+  line-height: 1;
+  background-color: #244990;
+  padding: 4px 12px;
+  border-radius: 10px;
+}
+
+.friendsLabel {
+  font-family: "Bowlby One", sans-serif;
+  font-size: 18px;
+  color: #244990;
+  text-transform: uppercase;
+}
+
+.friendAvatars { display: flex; gap: 5px; }
+
+.avatarButton { background: none; border: none; cursor: pointer; padding: 0; }
+
+.avatarButton img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #244990;
+}
+
+.activeAvatar img {
+  border-color: #009AD5;
+  box-shadow: 0 0 0 2px #009AD5;
+}
