@@ -5,12 +5,7 @@ import ProfileMenuCard from "../Components/ProfileMenuCard";
 
 import profileImg from "../assets/profile-photo.jpg";
 
-import ticketIcon from "../assets/ticket.png";
-import friendsIcon from "../assets/friends-dark.png";
-import scheduleIcon from "../assets/schedule-dark.png";
-import notificationIcon from "../assets/notification-dark.png";
-import locationIcon from "../assets/map-dark.png";
-import helpIcon from "../assets/settings.png";
+import { festivalLinks, settingsLinks } from "../Components/profileMenuLinks";
 
 function Profile() {
   return (
@@ -34,51 +29,29 @@ function Profile() {
       <h3 className={styles.sectionTitle}>My Festival</h3>
 
       <div className={styles.list}>
-        <ProfileMenuCard
-          icon={ticketIcon}
-          title="My Ticket"
-          text="View your ticket and details"
-          link="/"
-        />
-
-        <ProfileMenuCard
-          icon={friendsIcon}
-          title="Friends"
-          text="See your friends locations"
-          link="/friends"
-        />
-
-        <ProfileMenuCard
-          icon={scheduleIcon}
-          title="Schedule"
-          text="Be updated with the latest schedule"
-          link="/schedule"
-        />
+        {festivalLinks.map((item) => (
+          <ProfileMenuCard
+            key={item.title}
+            icon={item.icon}
+            title={item.title}
+            text={item.text}
+            link={item.link}
+          />
+        ))}
       </div>
 
       <h3 className={styles.sectionTitle}>Settings</h3>
 
       <div className={styles.list}>
-        <ProfileMenuCard
-          icon={notificationIcon}
-          title="Notifications"
-          text="Manage your preference"
-          link="/notifications"
-        />
-
-        <ProfileMenuCard
-          icon={locationIcon}
-          title="Location Sharing"
-          text="Control who can see your location"
-          link="/map"
-        />
-
-        <ProfileMenuCard
-          icon={helpIcon}
-          title="Help"
-          text="Get support and info"
-          link="/help"
-        />
+        {settingsLinks.map((item) => (
+          <ProfileMenuCard
+            key={item.title}
+            icon={item.icon}
+            title={item.title}
+            text={item.text}
+            link={item.link}
+          />
+        ))}
       </div>
     </section>
   );
