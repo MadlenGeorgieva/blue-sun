@@ -1,7 +1,7 @@
 import styles from "./Notifications.module.css";
 
 import PageTitle from "../Components/PageTitle";
-import NotificationCard from "../Components/NotificationCard";
+import NotificationCard from "../Components/Notifications/NotificationCard";
 
 import friendsIcon from "../assets/friends-dark.png";
 import programIcon from "../assets/speaker.png";
