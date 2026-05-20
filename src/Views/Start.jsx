@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Start.module.css";
 
-import welcomeSun from "../assets/BlaSol-dark.png";
+import welcomeSun from "../assets/BlaSolDark.png";
 import arrow from "../assets/arrow.png";
 
 function Start() {
