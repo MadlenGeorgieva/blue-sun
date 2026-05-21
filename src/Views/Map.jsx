@@ -3,11 +3,11 @@ import styles from "./Map.module.css";
 import nannaImg from "../assets/Nanna.jpg";
 import frejaImg from "../assets/Freja.jpg";
 import PageTitle from "../Components/PageTitle";
-import MapCanvas from "../Components/MapCanvas";
-import MapFilters from "../Components/MapFilters";
-import FriendsNearby from "../Components/FriendsNearby";
-import SosModal from "../Components/SosModal";
-import Toast from "../Components/Toast";
+import MapCanvas from "../Components/Map/MapCanvas";
+import MapFilters from "../Components/Map/MapFilters";
+import FriendsNearby from "../Components/Map/FriendsNearby";
+import SosModal from "../Components/Map/SosModal";
+import Toast from "../Components/Map/Toast";
 
 const CATEGORIES = ["None", "All", "Stages", "Food", "Chargers", "Rest Zones", "Toilets"];
 

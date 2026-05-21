@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import styles from "./MapCanvas.module.css";
-import LiveMapImg from "../assets/LiveMap.png";
+import LiveMapImg from "../../assets/LiveMap.png";
 
 function MapCanvas({ activePins, friendPositions, friends, focusedFriend, onSosOpen }) {
   const mapContainerRef = useRef(null);

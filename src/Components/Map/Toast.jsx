@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styles from "./Toast.module.css";
-import logoImg from "../assets/Logo.png";
-import BlaSolDarkImg from "../assets/BlaSolDark.png";
+import logoImg from "../../assets/Logo.png";
+import BlaSolDarkImg from "../../assets/BlaSolDark.png";
 
 // Toast component to display a message with an auto-dismiss feature
 // The toast will automatically disappear after 4 seconds, and it includes a logo for branding purposes
