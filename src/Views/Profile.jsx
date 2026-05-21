@@ -1,11 +1,11 @@
 import styles from "./Profile.module.css";
 
 import PageTitle from "../Components/PageTitle";
-import ProfileMenuCard from "../Components/ProfileMenuCard";
+import ProfileMenuCard from "../Components/Profile/ProfileMenuCard";
 
 import profileImg from "../assets/profile-photo.jpg";
 
-import { festivalLinks, settingsLinks } from "../Components/profileMenuLinks";
+import { festivalLinks, settingsLinks } from "../Components/Profile/ProfileMenuLinks";
 
 function Profile() {
   return (

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./ProfileMenuCard.module.css";
 
-import arrowDark from "../assets/arrow-white.png";
+import arrowDark from "../../assets/arrow-white.png";
 
 function ProfileMenuCard({ icon, title, text, link }) {
   const navigate = useNavigate();
