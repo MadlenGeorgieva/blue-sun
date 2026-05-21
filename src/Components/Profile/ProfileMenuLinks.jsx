@@ -1,3 +1,4 @@
+// Imports the icons used for the profile menu links
 import ticketIcon from "../../assets/ticket.png";
 import friendsIcon from "../../assets/friends-dark.png";
 import scheduleIcon from "../../assets/schedule-dark.png";
@@ -5,6 +6,7 @@ import notificationIcon from "../../assets/notification-dark.png";
 import locationIcon from "../../assets/map-dark.png";
 import helpIcon from "../../assets/settings.png";
 
+// Array containing links related to the festival experience
 export const festivalLinks = [
   {
     icon: ticketIcon,
@@ -12,12 +14,14 @@ export const festivalLinks = [
     text: "View your ticket and details",
     link: "/notfound",
   },
+
   {
     icon: friendsIcon,
     title: "Friends",
     text: "See your friends locations",
     link: "/friends",
   },
+
   {
     icon: scheduleIcon,
     title: "Schedule",
@@ -26,6 +30,7 @@ export const festivalLinks = [
   },
 ];
 
+// Array containing links related to application settings
 export const settingsLinks = [
   {
     icon: notificationIcon,
@@ -33,12 +38,14 @@ export const settingsLinks = [
     text: "Manage your preference",
     link: "/notifications",
   },
+
   {
     icon: locationIcon,
     title: "Location Sharing",
     text: "Control who can see your location",
     link: "/map",
   },
+
   {
     icon: helpIcon,
     title: "Help",
