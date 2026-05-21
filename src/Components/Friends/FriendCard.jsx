@@ -1,3 +1,5 @@
+// Imports the navigation hook from React Router
+// useNavigate is used to navigate the user to another page
 import { useNavigate } from "react-router-dom";
 
 import styles from "./FriendCard.module.css";
@@ -6,7 +8,11 @@ import locationIcon from "../../assets/location-outline-dark.png";
 import batteryImg from "../../assets/battery.png";
 import arrowDark from "../../assets/arrow-dark.png";
 
+// Reusable component that displays information about a friend
+// The component receives props
 function FriendCard({ name, location, image, battery }) {
+
+  // Creates navigation functionality
   const navigate = useNavigate();
 
   return (
@@ -14,8 +20,15 @@ function FriendCard({ name, location, image, battery }) {
       className={styles.card}
       onClick={() => navigate("/map")}
     >
+
       <div className={styles.avatarWrap}>
-        <img className={styles.avatar} src={image} alt={name} />
+        <img
+          className={styles.avatar}
+          src={image}
+          alt={name}
+        />
+
+        {/* Small indicator showing the friend is online */}
         <span className={styles.online}></span>
       </div>
 
@@ -33,7 +46,12 @@ function FriendCard({ name, location, image, battery }) {
         </div>
       </div>
 
-      <img className={styles.arrow} src={arrowDark} alt="" />
+      {/* Arrow icon indicating the card is clickable */}
+      <img
+        className={styles.arrow}
+        src={arrowDark}
+        alt=""
+      />
     </article>
   );
 }
