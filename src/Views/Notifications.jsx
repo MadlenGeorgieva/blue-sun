@@ -6,7 +6,7 @@ import NotificationCard from "../Components/Notifications/NotificationCard";
 import friendsIcon from "../assets/friends-dark.png";
 import programIcon from "../assets/speaker.png";
 import mapIcon from "../assets/map-dark.png";
-import logoIcon from "../assets/BlaSol-dark.png";
+import logoIcon from "../assets/BlaSolDark.png";
 
 const notifications = [
   {
