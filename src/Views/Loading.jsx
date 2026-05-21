@@ -4,9 +4,15 @@ import styles from "./Loading.module.css";
 
 import loadingSun from "../assets/sun-dark.png";
 
+// Displays a loading screen before automatically navigating
+// the user to the login page
 function Loading() {
+
+  // Allows navigation between pages inside the application
   const navigate = useNavigate();
 
+  // Starts a timer when the page loads
+  // After 2.2 seconds the user is redirected to the login page
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/login");
@@ -17,8 +23,17 @@ function Loading() {
 
   return (
     <section className={styles.page}>
-      <img className={styles.sunImage} src={loadingSun} alt="Loading" />
-      <p>LOADING...</p>
+
+      {/* Loading image */}
+      <img
+        className={styles.sunImage}
+        src={loadingSun}
+        alt="Loading"
+      />
+
+      <p>
+        LOADING...
+      </p>
     </section>
   );
 }

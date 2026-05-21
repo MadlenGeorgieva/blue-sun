@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import styles from "./Footer.module.css";
 
 import homeIcon from "../assets/HomeSun.png";
@@ -7,9 +8,14 @@ import scheduleIcon from "../assets/schedule-light.png";
 import mapIcon from "../assets/map-light.png";
 import friendsIcon from "../assets/friends-light.png";
 
+// Provides quick access to the main pages in the app
 function Footer() {
   return (
+
+    // Main footer container holding all navigation links
     <footer className={styles.footer}>
+
+      {/* Navigation links displayed inside the footer */}
       <Link to="/home" className={styles.item}>
         <img src={homeIcon} alt="" />
         <span>Home</span>
