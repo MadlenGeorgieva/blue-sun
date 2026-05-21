@@ -1,11 +1,11 @@
 import styles from "./FriendsPanel.module.css";
 
-import locationIcon from "../assets/location-outline-dark.png";
+import locationIcon from "../../assets/location-outline-dark.png";
 
-import nannaImg from "../assets/Nanna.jpg";
-import frejaImg from "../assets/Freja.jpg";
+import nannaImg from "../../assets/Nanna.jpg";
+import frejaImg from "../../assets/Freja.jpg";
 
-import batteryImg from "../assets/battery.png";
+import batteryImg from "../../assets/battery.png";
 
 const friends = [
   {

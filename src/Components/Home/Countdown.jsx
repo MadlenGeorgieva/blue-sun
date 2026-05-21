@@ -1,5 +1,5 @@
 import styles from "./Countdown.module.css";
-import halfSun from "../assets/HalfSun.png";
+import halfSun from "../../assets/HalfSun.png";
 
 function Countdown() {
   return (

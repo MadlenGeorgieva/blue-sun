@@ -6,9 +6,9 @@ import ProgramPanel from "./ProgramPanel";
 import FriendsPanel from "./FriendsPanel";
 import PanelActionButton from "./PanelActionButton";
 
-import spotifyIcon from "../assets/spotify.png";
-import scheduleIcon from "../assets/schedule-outline-white.png";
-import friendsIcon from "../assets/friends-outline-white.png";
+import spotifyIcon from "../../assets/spotify.png";
+import scheduleIcon from "../../assets/schedule-outline-white.png";
+import friendsIcon from "../../assets/friends-outline-white.png";
 
 const tabs = {
   music: {

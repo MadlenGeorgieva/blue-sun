@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import styles from "./PanelActionButton.module.css";
-import plusIcon from "../assets/plusIcon.png";
+import plusIcon from "../../assets/plusIcon.png";
 
 function PanelActionButton({ text, icon, link, external }) {
   const content = (

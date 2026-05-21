@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./MusicPanel.module.css";
 
-import SaveUs from "../assets/SaveUs.jpg";
-import GnawImg from "../assets/GNAW1.jpg";
-import InfernalImg from "../assets/infernal.jpg";
+import SaveUs from "../../assets/SaveUs.jpg";
+import GnawImg from "../../assets/GNAW1.jpg";
+import InfernalImg from "../../assets/infernal.jpg";
 
-import saveUsSong from "../assets/save-us.mp3";
-import gnawSong from "../assets/gnaw.mp3";
-import infernalSong from "../assets/Infernal.mp3";
+import saveUsSong from "../../assets/save-us.mp3";
+import gnawSong from "../../assets/gnaw.mp3";
+import infernalSong from "../../assets/Infernal.mp3";
 
-import heartActive from "../assets/heart-active.png";
-import heartNotActive from "../assets/heart-not-active.png";
-import locationIcon from "../assets/location-outline-dark.png";
+import heartActive from "../../assets/heart-active.png";
+import heartNotActive from "../../assets/heart-not-active.png";
+import locationIcon from "../../assets/location-outline-dark.png";
 
 const songs = [
   {
