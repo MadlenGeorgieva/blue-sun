@@ -1,21 +1,21 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-
-import styles from "./Auth.module.css";
+import styles from "./Form.module.css";
 
 import signupSun from "../assets/Sign-Up.png";
+
+import InputField from "../Components/Forms/FormInput";
+import SubmitButton from "../Components/Forms/FormButton";
+import SwitchLink from "../Components/Forms/FormSwitch";
 
 function Signup() {
   const navigate = useNavigate();
 
   return (
     <div className={styles.wrapper}>
-
       <section className={styles.page}>
         <img
-          className={styles.authSun}
+          className={styles.formSun}
           src={signupSun}
           alt="Sign up"
         />
@@ -27,23 +27,20 @@ function Signup() {
             navigate("/home");
           }}
         >
-          <label>Name:</label>
-
-          <input
+          <InputField
+            label="Name:"
             type="text"
             placeholder="Name..."
           />
 
-          <label>Email:</label>
-
-          <input
+          <InputField
+            label="Email:"
             type="email"
             placeholder="Email..."
           />
 
-          <label>Password:</label>
-
-          <input
+          <InputField
+            label="Password:"
             type="password"
             placeholder="Password..."
           />
@@ -52,27 +49,20 @@ function Signup() {
             <input type="checkbox" />
 
             <span>
-              I agree to the Terms and Conditions
-              and Privacy Policy
+              I agree to the Terms and Conditions and
+              Privacy Policy
             </span>
           </label>
 
-          <button
-            type="submit"
-            className={styles.submitButton}
-          >
-            Sign Up
-          </button>
+          <SubmitButton text="Sign Up" />
 
-          <p className={styles.switchText}>
-            Have an account?{" "}
-            <Link to="/login">
-              Log In
-            </Link>
-          </p>
+          <SwitchLink
+            text="Have an account?"
+            linkText="Log In"
+            to="/login"
+          />
         </form>
       </section>
-
     </div>
   );
 }

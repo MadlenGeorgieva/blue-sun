@@ -1,0 +1,12 @@
+.switchText {
+  text-align: center;
+
+  color: #244990;
+  font-size: 14px;
+}
+
+.switchText a {
+  color: #244990;
+  font-weight: 600;
+  text-decoration: none;
+}

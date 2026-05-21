@@ -1,0 +1,36 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  color: #24499b;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.field input {
+  width: 100%;
+
+  background: #24499b;
+  color: #f9f9f9;
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 14px 16px;
+
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.field input::placeholder {
+  color: #f9f9f9;
+  opacity: 1;
+}

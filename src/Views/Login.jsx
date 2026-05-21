@@ -1,18 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import styles from "./Auth.module.css";
+import styles from "./Form.module.css";
 
 import loginSun from "../assets/Log-In.png";
+
+import InputField from "../Components/Forms/FormInput";
+import SubmitButton from "../Components/Forms/FormButton";
+import SwitchLink from "../Components/Forms/FormSwitch";
 
 function Login() {
   const navigate = useNavigate();
 
   return (
     <div className={styles.wrapper}>
-
       <section className={styles.page}>
         <img
-          className={styles.authSun}
+          className={styles.formSun}
           src={loginSun}
           alt="Log in"
         />
@@ -24,16 +27,14 @@ function Login() {
             navigate("/home");
           }}
         >
-          <label>Email:</label>
-
-          <input
+          <InputField
+            label="Email:"
             type="email"
             placeholder="Email..."
           />
 
-          <label>Password:</label>
-
-          <input
+          <InputField
+            label="Password:"
             type="password"
             placeholder="Password..."
           />
@@ -47,19 +48,13 @@ function Login() {
             <a href="#">Forgot password?</a>
           </div>
 
-          <button
-            type="submit"
-            className={styles.submitButton}
-          >
-            Log In
-          </button>
+          <SubmitButton text="Log In" />
 
-          <p className={styles.switchText}>
-            Don’t have an account?{" "}
-            <Link to="/signup">
-              Sign up
-            </Link>
-          </p>
+          <SwitchLink
+            text="Don’t have an account?"
+            linkText="Sign up"
+            to="/signup"
+          />
         </form>
       </section>
     </div>
