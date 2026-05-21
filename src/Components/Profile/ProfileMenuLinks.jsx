@@ -10,7 +10,7 @@ export const festivalLinks = [
     icon: ticketIcon,
     title: "My Ticket",
     text: "View your ticket and details",
-    link: "/home",
+    link: "/notfound",
   },
   {
     icon: friendsIcon,
@@ -43,6 +43,6 @@ export const settingsLinks = [
     icon: helpIcon,
     title: "Help",
     text: "Get support and info",
-    link: "/help",
+    link: "/notfound",
   },
 ];

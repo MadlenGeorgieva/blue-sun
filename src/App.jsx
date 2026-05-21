@@ -12,6 +12,12 @@ import Notifications from "./Views/Notifications";
 import Profile from "./Views/Profile";
 import Scanner from "./Views/Scanner";
 
+import Start from "./Views/Start";
+import Loading from "./Views/Loading";
+import Login from "./Views/Login";
+import Signup from "./Views/Signup";
+import NotFound from "./Views/NotFound";
+
 import SaveUsImg from "./assets/SaveUs.jpg";
 import GallopDerbyImg from "./assets/GallopDerby.png";
 import GnawImg from "./assets/Gnaw.png";
@@ -21,49 +27,120 @@ import NaturalBornImg from "./assets/NaturalBorn.png";
 import SeniorCitizensImg from "./assets/SeniorCitizens.png";
 import SmugImg from "./assets/Smug.png";
 import CarolineMousingImg from "./assets/CarolineMousing.png";
-import Start from "./Views/Start";
-import Loading from "./Views/Loading";
-import Login from "./Views/Login";
-import Signup from "./Views/Signup";
-
 
 const ALL_ARTISTS = [
-  { time: "11:45", name: "SaveUs", stage: "Wonder blue", image: SaveUsImg, },
-  { time: "12:45", name: "Gallop Derby", stage: "The Dragoon", image: GallopDerbyImg },
-  { time: "12:50", name: "Natural Born Hippies", stage: "The city festival", image: NaturalBornImg },
-  { time: "13:45", name: "Gnaw", stage: "Wonder blue", image: GnawImg },
-  { time: "14:00", name: "Marie Frank", stage: "The birch grove", image: MarieFrankImg },
-  { time: "15:10", name: "Senior Citizens", stage: "The city festival", image: SeniorCitizensImg },
-  { time: "15:15", name: "Anastasia", stage: "The birch grove", image: AnastasiaImg },
-  { time: "15:20", name: "Caroline Mousing", stage: "The Dragoon", image: CarolineMousingImg },
-  { time: "16:20", name: "Smug", stage: "The birch grove", image: SmugImg },
+  {
+    time: "11:45",
+    name: "SaveUs",
+    stage: "Wonder blue",
+    image: SaveUsImg,
+  },
+  {
+    time: "12:45",
+    name: "Gallop Derby",
+    stage: "The Dragoon",
+    image: GallopDerbyImg,
+  },
+  {
+    time: "12:50",
+    name: "Natural Born Hippies",
+    stage: "The city festival",
+    image: NaturalBornImg,
+  },
+  {
+    time: "13:45",
+    name: "Gnaw",
+    stage: "Wonder blue",
+    image: GnawImg,
+  },
+  {
+    time: "14:00",
+    name: "Marie Frank",
+    stage: "The birch grove",
+    image: MarieFrankImg,
+  },
+  {
+    time: "15:10",
+    name: "Senior Citizens",
+    stage: "The city festival",
+    image: SeniorCitizensImg,
+  },
+  {
+    time: "15:15",
+    name: "Anastasia",
+    stage: "The birch grove",
+    image: AnastasiaImg,
+  },
+  {
+    time: "15:20",
+    name: "Caroline Mousing",
+    stage: "The Dragoon",
+    image: CarolineMousingImg,
+  },
+  {
+    time: "16:20",
+    name: "Smug",
+    stage: "The birch grove",
+    image: SmugImg,
+  },
 ];
 
 function App() {
   const [savedArtists, setSavedArtists] = useState(
-    Object.fromEntries(ALL_ARTISTS.map((a) => [a.name, false]))
+    Object.fromEntries(
+      ALL_ARTISTS.map((artist) => [artist.name, false])
+    )
   );
 
   const toggleSave = (name) => {
-    setSavedArtists((prev) => ({ ...prev, [name]: !prev[name] }));
+    setSavedArtists((prev) => ({
+      ...prev,
+      [name]: !prev[name],
+    }));
   };
 
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Start />} />
+
         <Route path="loading" element={<Loading />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
+
         <Route path="home" element={<Home />} />
-        <Route path="lineup" element={<Lineup artists={ALL_ARTISTS} savedArtists={savedArtists} toggleSave={toggleSave} />} />
-        <Route path="schedule" element={<Schedule artists={ALL_ARTISTS} savedArtists={savedArtists} toggleSave={toggleSave} />} />
+
+        <Route
+          path="lineup"
+          element={
+            <Lineup
+              artists={ALL_ARTISTS}
+              savedArtists={savedArtists}
+              toggleSave={toggleSave}
+            />
+          }
+        />
+
+        <Route
+          path="schedule"
+          element={
+            <Schedule
+              artists={ALL_ARTISTS}
+              savedArtists={savedArtists}
+              toggleSave={toggleSave}
+            />
+          }
+        />
+
         <Route path="map" element={<Map />} />
         <Route path="friends" element={<Friends />} />
         <Route path="notifications" element={<Notifications />} />
         <Route path="profile" element={<Profile />} />
       </Route>
+
       <Route path="scanner" element={<Scanner />} />
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
