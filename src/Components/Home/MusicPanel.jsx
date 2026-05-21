@@ -13,6 +13,7 @@ import heartActive from "../../assets/heart-active.png";
 import heartNotActive from "../../assets/heart-not-active.png";
 import locationIcon from "../../assets/location-outline-dark.png";
 
+// Stores the songs shown in the music player
 const songs = [
   {
     title: "SAVE US",
@@ -34,6 +35,7 @@ const songs = [
   },
 ];
 
+// Converts the song time from seconds into a readable minutes:seconds format
 function formatTime(time) {
   if (!time || Number.isNaN(time)) return "0:00";
 
@@ -43,6 +45,8 @@ function formatTime(time) {
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
+// Music player component used in the Music tab
+// It controls playing, pausing, switching songs, liking a song, and showing real-time progress
 function MusicPanel() {
   const [isSaved, setIsSaved] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -56,6 +60,8 @@ function MusicPanel() {
 
   const progressPercent = duration ? (currentTime / duration) * 100 : 0;
 
+  // Handles the audio playback logic
+  // Browser audio can fail if the user has not interacted with the page, so errors are handled safely
   const playAudio = () => {
     if (!audioRef.current) return;
 
@@ -69,6 +75,7 @@ function MusicPanel() {
       });
   };
 
+  // Handles play/pause and moving between songs
   const togglePlay = () => {
     if (!audioRef.current) return;
 
@@ -92,6 +99,7 @@ function MusicPanel() {
     );
   };
 
+  // Updates song duration and current playback time
   const handleLoadedMetadata = () => {
     setDuration(audioRef.current.duration);
   };
@@ -100,6 +108,8 @@ function MusicPanel() {
     setCurrentTime(audioRef.current.currentTime);
   };
 
+  // Reloads the audio whenever the selected song changes
+  // If music was already playing, the next selected song continues automatically
   useEffect(() => {
     if (!audioRef.current) return;
 
@@ -122,6 +132,7 @@ function MusicPanel() {
         onEnded={nextSong}
       />
 
+      {/* Displays the current song image and like button */}
       <div className={styles.imageCard}>
         <img
           className={styles.bandImage}
@@ -138,6 +149,7 @@ function MusicPanel() {
         </button>
       </div>
 
+      {/* Displays song details, progress, time, and controls */}
       <div className={styles.info}>
         <p className={styles.nowPlaying}>Now playing</p>
 

@@ -7,6 +7,7 @@ import frejaImg from "../../assets/Freja.jpg";
 
 import batteryImg from "../../assets/battery.png";
 
+// Array containing information about the user's friends
 const friends = [
   {
     name: "Nanna Sørensen",
@@ -15,6 +16,7 @@ const friends = [
     battery: batteryImg,
     percent: "67%",
   },
+
   {
     name: "Freja Lauritsen",
     location: "Main Entrance",
@@ -24,9 +26,14 @@ const friends = [
   },
 ];
 
+// Component displaying a preview list of friends
 function FriendsPanel() {
   return (
+
+    // Main panel containing all friend items
     <div className={styles.friendsPanel}>
+
+      {/* Loops through the friends array and displays each friend */}
       {friends.map((friend, index) => (
         <div className={styles.friendItem} key={friend.name}>
           <img
@@ -52,6 +59,7 @@ function FriendsPanel() {
             />
           </div>
 
+          {/* Divider displayed between friend items */}
           {index !== friends.length - 1 && (
             <div className={styles.divider}></div>
           )}
