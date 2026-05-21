@@ -5,15 +5,27 @@ import ProfileMenuCard from "../Components/Profile/ProfileMenuCard";
 
 import profileImg from "../assets/profile-photo.jpg";
 
-import { festivalLinks, settingsLinks } from "../Components/Profile/ProfileMenuLinks";
+import {
+  festivalLinks,
+  settingsLinks,
+} from "../Components/Profile/ProfileMenuLinks";
 
+// Displays the user's profile information,
+// festival shortcuts, and settings options
 function Profile() {
   return (
+
     <section className={styles.page}>
+
       <PageTitle title="Profile" />
 
+      {/* User profile information section */}
       <div className={styles.profileHeader}>
-        <img className={styles.avatar} src={profileImg} alt="Matteo Leppori" />
+        <img
+          className={styles.avatar}
+          src={profileImg}
+          alt="Matteo Leppori"
+        />
 
         <div className={styles.profileInfo}>
           <h2>
@@ -22,11 +34,16 @@ function Profile() {
             Leppori
           </h2>
 
-          <button className={styles.editButton}>Edit Profile</button>
+          <button className={styles.editButton}>
+            Edit Profile
+          </button>
         </div>
       </div>
 
-      <h3 className={styles.sectionTitle}>My Festival</h3>
+      {/* Festival related links section */}
+      <h3 className={styles.sectionTitle}>
+        My Festival
+      </h3>
 
       <div className={styles.list}>
         {festivalLinks.map((item) => (
@@ -40,7 +57,10 @@ function Profile() {
         ))}
       </div>
 
-      <h3 className={styles.sectionTitle}>Settings</h3>
+      {/* Settings related links section */}
+      <h3 className={styles.sectionTitle}>
+        Settings
+      </h3>
 
       <div className={styles.list}>
         {settingsLinks.map((item) => (

@@ -15,6 +15,8 @@ import styles from "./Scanner.module.css";
 import closeIcon from "../assets/close.png";
 import flashIcon from "../assets/flash.png";
 
+// Handles camera access, uploaded image preview,
+// scanner layout, and scanner page navigation
 function Scanner() {
   const navigate = useNavigate();
 
@@ -24,6 +26,8 @@ function Scanner() {
   const [previewImage, setPreviewImage] = useState(null);
   const [flashOn, setFlashOn] = useState(false);
 
+  // Starts the device camera when the scanner page opens
+  // The cleanup function stops the camera when the user leaves the page
   useEffect(() => {
     let stream;
 
@@ -52,6 +56,7 @@ function Scanner() {
     };
   }, []);
 
+  // Handles scanner actions such as flash toggle and image upload
   const toggleFlash = () => {
     setFlashOn(!flashOn);
     console.log("Flash toggled");
@@ -79,8 +84,12 @@ function Scanner() {
         onRightClick={toggleFlash}
       />
 
+      {/* Main scanner area with camera, overlay, frame, text, and upload option */}
       <main className={styles.content}>
-        <ScannerMedia videoRef={videoRef} previewImage={previewImage} />
+        <ScannerMedia
+          videoRef={videoRef}
+          previewImage={previewImage}
+        />
 
         <ScannerOverlay />
 

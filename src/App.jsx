@@ -1,3 +1,4 @@
+// Imports routing, React state, layout, pages, and artist images used in the app
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
@@ -28,6 +29,8 @@ import SeniorCitizensImg from "./assets/SeniorCitizens.png";
 import SmugImg from "./assets/Smug.png";
 import CarolineMousingImg from "./assets/CarolineMousing.png";
 
+// Main artist data used by both the Lineup and Schedule pages
+// Each artist has a time, name, stage, and image
 const ALL_ARTISTS = [
   {
     time: "11:45",
@@ -85,6 +88,7 @@ const ALL_ARTISTS = [
   },
 ];
 
+// Handles routing and stores the saved artist state shared between Lineup and Schedule
 function App() {
   const [savedArtists, setSavedArtists] = useState(
     Object.fromEntries(
@@ -92,6 +96,8 @@ function App() {
     )
   );
 
+  // Toggles whether an artist is saved
+  // Saved artists appear in the Schedule page, and unsaved artists are removed
   const toggleSave = (name) => {
     setSavedArtists((prev) => ({
       ...prev,
@@ -100,6 +106,8 @@ function App() {
   };
 
   return (
+
+    // Defines all application routes
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Start />} />
@@ -110,6 +118,7 @@ function App() {
 
         <Route path="home" element={<Home />} />
 
+        {/* Lineup page receives artist data and save functionality */}
         <Route
           path="lineup"
           element={
@@ -121,6 +130,7 @@ function App() {
           }
         />
 
+        {/* Schedule page receives the same saved artist state */}
         <Route
           path="schedule"
           element={
@@ -140,6 +150,7 @@ function App() {
 
       <Route path="scanner" element={<Scanner />} />
 
+      {/* Fallback route displayed when the user opens an unknown page */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
