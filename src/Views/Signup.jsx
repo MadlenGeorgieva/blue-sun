@@ -43,18 +43,21 @@ function Signup() {
             label="Name:"
             type="text"
             placeholder="Name..."
+            autoComplete="name"
           />
 
           <InputField
             label="Email:"
             type="email"
             placeholder="Email..."
+            autoComplete="email"
           />
 
           <InputField
             label="Password:"
             type="password"
             placeholder="Password..."
+            autoComplete="new-password"
           />
 
           {/* Terms and conditions agreement section */}

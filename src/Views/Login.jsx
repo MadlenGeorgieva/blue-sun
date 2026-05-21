@@ -37,19 +37,21 @@ function Login() {
           }}
         >
 
-          {/* Email input field */}
-          <InputField
-            label="Email:"
-            type="email"
-            placeholder="Email..."
-          />
+            {/* Email input field */}
+            <InputField
+              label="Email:"
+              type="email"
+              placeholder="Email..."
+              autoComplete="email"
+            />
 
-          {/* Password input field */}
-          <InputField
-            label="Password:"
-            type="password"
-            placeholder="Password..."
-          />
+            {/* Password input field */}
+            <InputField
+              label="Password:"
+              type="password"
+              placeholder="Password..."
+              autoComplete="current-password"
+            />
 
           {/* Extra login options */}
           <div className={styles.row}>

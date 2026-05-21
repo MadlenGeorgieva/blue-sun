@@ -2,8 +2,14 @@
 import styles from "./FormInput.module.css";
 
 // Reusable input component used in forms
-// The component receives props
-function FormInput({ label, type, placeholder }) {
+// The component receives label, input type,
+// placeholder text, and autocomplete settings as props
+function FormInput({
+  label,
+  type,
+  placeholder,
+  autoComplete,
+}) {
   return (
     <div className={styles.field}>
       <label>{label}</label>
@@ -11,6 +17,7 @@ function FormInput({ label, type, placeholder }) {
       <input
         type={type}
         placeholder={placeholder}
+        autoComplete={autoComplete}
       />
     </div>
   );
