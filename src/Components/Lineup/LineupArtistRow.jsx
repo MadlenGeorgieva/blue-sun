@@ -1,8 +1,8 @@
 import styles from "./LineupArtistRow.module.css";
 
-import locationIcon from "../assets/location-outline-dark.png";
-import heartActive from "../assets/heart-active.png";
-import heartNotActive from "../assets/heart-not-active.png";
+import locationIcon from "../../assets/location-outline-dark.png";
+import heartActive from "../../assets/heart-active.png";
+import heartNotActive from "../../assets/heart-not-active.png";
 
 function LineupArtistRow({ artist, isLast, isSaved, toggleSave }) {
   return (

@@ -2,8 +2,8 @@ import { useState } from "react";
 import styles from "./LineUp.module.css";
 
 import PageTitle from "../Components/PageTitle";
-import LineupSearch from "../Components/LineupSearch";
-import LineupList from "../Components/LineupList";
+import LineupSearch from "../Components/Lineup/LineupSearch";
+import LineupList from "../Components/Lineup/LineupList";
 
 function Lineup({ artists, savedArtists, toggleSave }) {
   const [search, setSearch] = useState("");

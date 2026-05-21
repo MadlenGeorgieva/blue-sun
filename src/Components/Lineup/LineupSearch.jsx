@@ -1,5 +1,5 @@
 import styles from "./LineupSearch.module.css";
-import searchIcon from "../assets/search.png";
+import searchIcon from "../../assets/search.png";
 
 function LineupSearch({ value, onChange }) {
   return (
