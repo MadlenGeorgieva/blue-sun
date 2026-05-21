@@ -3,7 +3,7 @@ import styles from "./MapCanvas.module.css";
 import LiveMapImg from "../../assets/LiveMap.png";
 
 // Interactive map component used on the map page
-// The component supports dragging, zooming, map pins, friend locations, and an SOS button
+// The component supports zooming, map pins, friend locations, and an SOS button
 function MapCanvas({
   activePins,
   friendPositions,
@@ -20,11 +20,6 @@ function MapCanvas({
   // useRef is used instead of useState to avoid unnecessary re-renders
   const scale = useRef(1);
   const translate = useRef({ x: 0, y: 0 });
-
-  // Stores drag and touch interaction values
-  const isDragging = useRef(false);
-  const lastPos = useRef({ x: 0, y: 0 });
-  const lastDist = useRef(null);
 
   // Calculates the minimum zoom level needed
   // so the map always covers the visible screen area
@@ -88,7 +83,7 @@ function MapCanvas({
     return () => clearTimeout(timer);
   }, []);
 
-  // Keeps the map inside the visible area while dragging or zooming
+  // Keeps the map inside the visible area while zooming
   // Prevents empty space from appearing around the map
   const clampTranslate = () => {
     const container = mapContainerRef.current;
@@ -113,158 +108,9 @@ function MapCanvas({
     );
   };
 
-  // Handles desktop dragging interaction
-  // The map moves based on the user's mouse movement
-  const onMouseDown = (e) => {
-    isDragging.current = true;
-
-    lastPos.current = {
-      x: e.clientX,
-      y: e.clientY,
-    };
-  };
-
-  const onMouseUp = () => {
-    isDragging.current = false;
-  };
-
-  const onMouseMove = (e) => {
-    if (!isDragging.current) return;
-
-    const container = mapContainerRef.current;
-    const inner = mapInnerRef.current;
-
-    const cw = container.clientWidth;
-    const ch = container.clientHeight;
-
-    const iw = inner.clientWidth * scale.current;
-    const ih = inner.clientHeight * scale.current;
-
-    translate.current.x = Math.min(
-      0,
-      Math.max(
-        Math.min(0, cw - iw),
-        translate.current.x + e.clientX - lastPos.current.x
-      )
-    );
-
-    translate.current.y = Math.min(
-      0,
-      Math.max(
-        Math.min(0, ch - ih),
-        translate.current.y + e.clientY - lastPos.current.y
-      )
-    );
-
-    lastPos.current = {
-      x: e.clientX,
-      y: e.clientY,
-    };
-
-    applyTransform();
-  };
-
-  // Handles touch interaction on mobile devices
-  // One finger drags the map and two fingers zoom in or out
-  const onTouchStart = (e) => {
-    if (e.touches.length === 1) {
-      isDragging.current = true;
-
-      lastPos.current = {
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY,
-      };
-    }
-
-    else if (e.touches.length === 2) {
-      isDragging.current = false;
-
-      const dx =
-        e.touches[0].clientX - e.touches[1].clientX;
-
-      const dy =
-        e.touches[0].clientY - e.touches[1].clientY;
-
-      lastDist.current = Math.sqrt(dx * dx + dy * dy);
-    }
-  };
-
-  const onTouchMove = (e) => {
-
-    // Handles dragging with one finger
-    if (e.touches.length === 1 && isDragging.current) {
-
-      const container = mapContainerRef.current;
-      const inner = mapInnerRef.current;
-
-      const cw = container.clientWidth;
-      const ch = container.clientHeight;
-
-      const iw = inner.clientWidth * scale.current;
-      const ih = inner.clientHeight * scale.current;
-
-      translate.current.x = Math.min(
-        0,
-        Math.max(
-          Math.min(0, cw - iw),
-          translate.current.x +
-            e.touches[0].clientX -
-            lastPos.current.x
-        )
-      );
-
-      translate.current.y = Math.min(
-        0,
-        Math.max(
-          Math.min(0, ch - ih),
-          translate.current.y +
-            e.touches[0].clientY -
-            lastPos.current.y
-        )
-      );
-
-      lastPos.current = {
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY,
-      };
-
-      applyTransform();
-    }
-
-    // Handles pinch zoom using two fingers
-    else if (e.touches.length === 2 && lastDist.current) {
-
-      const dx =
-        e.touches[0].clientX - e.touches[1].clientX;
-
-      const dy =
-        e.touches[0].clientY - e.touches[1].clientY;
-
-      const dist = Math.sqrt(dx * dx + dy * dy);
-
-      scale.current = Math.min(
-        4,
-        Math.max(
-          getMinScale(),
-          scale.current * (dist / lastDist.current)
-        )
-      );
-
-      lastDist.current = dist;
-
-      clampTranslate();
-      applyTransform();
-    }
-  };
-
-  const onTouchEnd = () => {
-    isDragging.current = false;
-    lastDist.current = null;
-  };
-
   // Zoom button controls
   const zoomIn = () => {
-    scale.current = Math.min(4, scale.current + 0.3);
+    scale.current = Math.min(4, scale.current + 0.5);
 
     clampTranslate();
     applyTransform();
@@ -273,7 +119,7 @@ function MapCanvas({
   const zoomOut = () => {
     scale.current = Math.max(
       getMinScale(),
-      scale.current - 0.1
+      scale.current - 0.5
     );
 
     clampTranslate();
@@ -282,17 +128,10 @@ function MapCanvas({
 
   return (
 
-    // Main interactive map container
+    // Main map container
     <div
       className={styles.mapContainer}
       ref={mapContainerRef}
-      onMouseDown={onMouseDown}
-      onMouseMove={onMouseMove}
-      onMouseUp={onMouseUp}
-      onMouseLeave={onMouseUp}
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
     >
 
       {/* Inner map element that moves and scales */}

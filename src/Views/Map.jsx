@@ -13,26 +13,26 @@ const CATEGORIES = ["None", "All", "Stages", "Food", "Chargers", "Rest Zones", "
 
 const PINS = {
   Stages: [
-    { id: "stage1", label: "Main Stage", x: 67, y: 40 },
+    { id: "stage1", label: "Main Stage", x: 60, y: 34 },
     { id: "stage2", label: "Wonder Blue", x: 20, y: 28 },
-    { id: "stage3", label: "The Dragoon", x: 29, y: 95 },
+    { id: "stage3", label: "The Dragoon", x: 36, y: 88 },
   ],
   Food: [
-    { id: "food1", label: "Food Court", x: 43, y: 60 },
-    { id: "food2", label: "Market", x: 22, y: 55 },
-    { id: "food3", label: "Bar", x: 50, y: 83 },
+    { id: "food1", label: "Food Court", x: 43, y: 59 },
+    { id: "food2", label: "Market", x: 25, y: 53 },
+    { id: "food3", label: "Bar", x: 52, y: 75 },
   ],
   Chargers: [
-    { id: "charger1", label: "Charger A", x: 41, y: 38 },
-    { id: "charger2", label: "Charger B", x: 13, y: 65 },
+    { id: "charger1", label: "Charger A", x: 68, y: 14 },
+    { id: "charger2", label: "Charger B", x: 15, y: 61 },
   ],
   "Rest Zones": [
-    { id: "rest1", label: "Chill Zone", x: 70, y: 72 },
-    { id: "rest2", label: "Shade Area", x: 17, y: 75 },
+    { id: "rest1", label: "Chill Zone", x: 72, y: 57 },
+    { id: "rest2", label: "Shade Area", x: 22, y: 70 },
   ],
   Toilets: [
-    { id: "toilet1", label: "Toilet A", x: 90, y: 39 },
-    { id: "toilet2", label: "Toilet B", x: 90, y: 77 },
+    { id: "toilet1", label: "Toilet A", x: 83, y: 33 },
+    { id: "toilet2", label: "Toilet B", x: 82, y: 73 },
   ],
 };
 
