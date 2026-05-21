@@ -1,5 +1,5 @@
 import styles from "./FriendsSearch.module.css";
-import searchIcon from "../assets/search.png";
+import searchIcon from "../../assets/search.png";
 
 function FriendsSearch({ value, onChange }) {
   return (

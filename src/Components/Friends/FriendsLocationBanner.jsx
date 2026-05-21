@@ -1,7 +1,7 @@
 import styles from "./FriendsLocationBanner.module.css";
 
-import mapIcon from "../assets/map.png";
-import halfSun from "../assets/HalfSun.png";
+import mapIcon from "../../assets/map.png";
+import halfSun from "../../assets/HalfSun.png";
 
 function FriendsLocationBanner() {
   return (

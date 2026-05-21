@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./FriendCard.module.css";
 
-import locationIcon from "../assets/location-outline-dark.png";
-import batteryImg from "../assets/battery.png";
-import arrowDark from "../assets/arrow-dark.png";
+import locationIcon from "../../assets/location-outline-dark.png";
+import batteryImg from "../../assets/battery.png";
+import arrowDark from "../../assets/arrow-dark.png";
 
 function FriendCard({ name, location, image, battery }) {
   const navigate = useNavigate();

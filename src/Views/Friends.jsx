@@ -3,9 +3,9 @@ import { useState } from "react";
 import styles from "./Friends.module.css";
 
 import PageTitle from "../Components/PageTitle";
-import FriendsSearch from "../Components/FriendsSearch";
-import FriendsLocationBanner from "../Components/FriendsLocationBanner";
-import FriendCard from "../Components/FriendCard";
+import FriendsSearch from "../Components/Friends/FriendsSearch";
+import FriendsLocationBanner from "../Components/Friends/FriendsLocationBanner";
+import FriendCard from "../Components/Friends/FriendCard";
 import ActionButton from "../Components/ActionButton";
 
 import subtitleIcon from "../assets/sun-dark.png";
