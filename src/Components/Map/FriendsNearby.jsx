@@ -19,7 +19,7 @@ function FriendsNearby({ friends, focusedFriend, onFocusFriend }) {
         </span>
       </div>
 
-      {/* Displays friend avatars used for selecting a friend on the map */}
+{/* Friend avatar buttons — tap to highlight that friend's bubble on the map */}
       <div className={styles.friendAvatars}>
         {friends.map((friend, i) => (
           <button
